@@ -14,6 +14,7 @@ namespace BillManager
       
         double total { get; set; }
 
+        private string filePath = @"C:\CodeRepository\BillManagmentSystem\test.csv";
 
         public BillFunctions()
         {
@@ -43,7 +44,7 @@ namespace BillManager
                 sb.AppendLine();
             }
 
-            string filePath = @"C:\Users\jordandogz1\Desktop\BillManager\test.csv";
+            //string filePath = @"C:\Users\jordandogz1\Desktop\BillManager\test.csv";
 
             try
             {
@@ -64,7 +65,7 @@ namespace BillManager
                  
         public List<Bill> ReadFromFile()
         {
-            string FileAdress = (@"C:\Users\jordandogz1\Desktop\BillManager\test.csv");
+            string FileAdress = (filePath);
            
 
             List<Bill> BillsFromFileList  = new List<Bill>();
