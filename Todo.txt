@@ -1,0 +1,5 @@
+1)link this repo to github 
+
+2) move c# bill manager to this repo
+
+3) 
