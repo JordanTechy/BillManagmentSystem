@@ -3,3 +3,5 @@
 2) move c# bill manager to this repo check 
 
 3) saved both repo and master 
+
+4)about to do something i dont know
