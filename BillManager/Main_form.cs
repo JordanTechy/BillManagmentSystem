@@ -12,7 +12,7 @@ namespace BillManager
 
 
     /*
-     * adding more shit to dev mode
+     * sorting more dev shit out 
      * 
      * 
      * adding some mmore shit to dev mode 
