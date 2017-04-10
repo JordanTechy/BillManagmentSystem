@@ -11,6 +11,7 @@ namespace BillManager
 
     public class BillFunctions
     {
+        double shit;
       
         double total { get; set; }
 
@@ -31,7 +32,7 @@ namespace BillManager
             }
             return total;
         }
-
+        
 
 
         public bool SaveTheData(List<Bill> Bill_list)
