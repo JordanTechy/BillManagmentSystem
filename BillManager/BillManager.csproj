@@ -49,7 +49,6 @@
   <ItemGroup>
     <Compile Include="Bill.cs" />
     <Compile Include="BillFunctions.cs" />
-    <Compile Include="eventTest.cs" />
     <Compile Include="LinqTry.cs" />
     <Compile Include="Main_form.cs">
       <SubType>Form</SubType>
@@ -83,6 +82,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Todo.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

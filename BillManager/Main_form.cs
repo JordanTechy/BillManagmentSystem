@@ -12,10 +12,7 @@ namespace BillManager
 
 
     /*
-     consider making bills list the main thing and invoking a delagate event to update the table anytime bills list gets changed
-
-     sort out deleting the bills list item and then updating the table rather then acessing the table directley 
-       
+     
     */
     public partial class Main_form : Form
     {

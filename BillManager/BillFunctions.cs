@@ -11,7 +11,7 @@ namespace BillManager
 
     public class BillFunctions
     {
-      
+        
         double total { get; set; }
 
         private string filePath = @"C:\CodeRepository\BillManagmentSystem\test.csv";
@@ -20,7 +20,6 @@ namespace BillManager
         {
             
         }
-
 
         public double totalWeekleyCost(List<Bill> Bill_list)
         {
@@ -31,9 +30,7 @@ namespace BillManager
             }
             return total;
         }
-
-
-
+        
         public bool SaveTheData(List<Bill> Bill_list)
         {
             StringBuilder sb = new StringBuilder();
@@ -60,8 +57,6 @@ namespace BillManager
             }
 
         }
-       
-       
                  
         public List<Bill> ReadFromFile()
         {
@@ -94,7 +89,7 @@ namespace BillManager
            
 
             string[] delim = { Environment.NewLine }; // "\n" added in case you manually appended a newline
-            string[] delim2 = { "," }; // "\n" added in case you manually appended a newline
+            string[] delim2 = { "," }; // 
 
 
             string[] line = sb.ToString().Split(delim, StringSplitOptions.None);
@@ -122,9 +117,6 @@ namespace BillManager
             return BillsFromFileList;
         }
 
-
-
-
         public bool CompareListOfBills(List<Bill> UsersBills, List<Bill> FilesBills)
         {
             bool billsEQfile = false;
@@ -149,7 +141,6 @@ namespace BillManager
             }
             return billsEQfile;
         }
-
 
 
 //----------------------------------------

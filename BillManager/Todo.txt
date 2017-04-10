@@ -1,0 +1,16 @@
+To do 
+
+add person class inheriting base class 
+
+add my income
+add jacquies income
+
+add total income left after bill payed 
+
+add spending money to my income and jacquies income
+
+sort out deleting and maybe editing the bills list item and then 
+updating the table rather then acessing the table directley 
+
+consider making bills list the main thing and invoking a delagate
+event to update the table anytime bills list gets changed       

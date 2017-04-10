@@ -6,9 +6,7 @@ using System.Threading.Tasks;
 
 namespace BillManager
 {
-   
-
-
+    //sadfasdf
     public class Bill
         
     {
@@ -19,7 +17,6 @@ namespace BillManager
         public double WeeklyCost { get; set; }
 
         public DateTime PaymentDate { get; set; }
-
       
         public Bill(string _BillName,string _PersonName,double _cost,DateTime _PaymentDate)
         {
@@ -28,10 +25,6 @@ namespace BillManager
             this.PersonsName = _PersonName;
             this.WeeklyCost = _cost;
             this.PaymentDate = _PaymentDate;
-
-
         }
-
-
     }
 }
