@@ -12,7 +12,9 @@ namespace BillManager
 
 
     /*
-     asdasdsadssadDEVVVVVVsdasd1212`2`21`21212
+     * adding some mmore shit to dev mode 
+     * 
+     asdasdsadssadDEVVVVVVsdasd1212`223232332323asdf`21`21212
     */
     public partial class Main_form : Form
     {
