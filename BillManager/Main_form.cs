@@ -12,7 +12,7 @@ namespace BillManager
 
 
     /*
-     
+     wtf master
     */
     public partial class Main_form : Form
     {
