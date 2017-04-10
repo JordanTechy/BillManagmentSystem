@@ -12,7 +12,7 @@ namespace BillManager
 
 
     /*
-     
+     asdasdsadsa2121212`2`21`2
     */
     public partial class Main_form : Form
     {
