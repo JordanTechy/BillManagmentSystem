@@ -63,7 +63,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(744, 57);
+            this.textBox1.Location = new System.Drawing.Point(772, 57);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(399, 471);
@@ -71,7 +71,7 @@
             // 
             // BT_Delete
             // 
-            this.BT_Delete.Location = new System.Drawing.Point(1053, 540);
+            this.BT_Delete.Location = new System.Drawing.Point(1050, 540);
             this.BT_Delete.Name = "BT_Delete";
             this.BT_Delete.Size = new System.Drawing.Size(90, 50);
             this.BT_Delete.TabIndex = 2;
@@ -159,14 +159,14 @@
             // TB_deletebill
             // 
             this.TB_deletebill.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TB_deletebill.Location = new System.Drawing.Point(1039, 596);
+            this.TB_deletebill.Location = new System.Drawing.Point(1041, 596);
             this.TB_deletebill.Name = "TB_deletebill";
             this.TB_deletebill.Size = new System.Drawing.Size(118, 29);
             this.TB_deletebill.TabIndex = 14;
             // 
             // BT_printbillList
             // 
-            this.BT_printbillList.Location = new System.Drawing.Point(910, 540);
+            this.BT_printbillList.Location = new System.Drawing.Point(909, 540);
             this.BT_printbillList.Name = "BT_printbillList";
             this.BT_printbillList.Size = new System.Drawing.Size(90, 50);
             this.BT_printbillList.TabIndex = 15;
@@ -176,7 +176,7 @@
             // 
             // BT_totalweekcost
             // 
-            this.BT_totalweekcost.Location = new System.Drawing.Point(744, 540);
+            this.BT_totalweekcost.Location = new System.Drawing.Point(782, 540);
             this.BT_totalweekcost.Name = "BT_totalweekcost";
             this.BT_totalweekcost.Size = new System.Drawing.Size(90, 50);
             this.BT_totalweekcost.TabIndex = 16;
@@ -186,7 +186,7 @@
             // 
             // TB_SaveToFile
             // 
-            this.TB_SaveToFile.Location = new System.Drawing.Point(559, 105);
+            this.TB_SaveToFile.Location = new System.Drawing.Point(579, 192);
             this.TB_SaveToFile.Name = "TB_SaveToFile";
             this.TB_SaveToFile.Size = new System.Drawing.Size(90, 50);
             this.TB_SaveToFile.TabIndex = 17;
@@ -196,7 +196,7 @@
             // 
             // BT_ReadFile
             // 
-            this.BT_ReadFile.Location = new System.Drawing.Point(559, 190);
+            this.BT_ReadFile.Location = new System.Drawing.Point(579, 277);
             this.BT_ReadFile.Name = "BT_ReadFile";
             this.BT_ReadFile.Size = new System.Drawing.Size(90, 50);
             this.BT_ReadFile.TabIndex = 18;
@@ -206,7 +206,7 @@
             // 
             // BT_TestButton
             // 
-            this.BT_TestButton.Location = new System.Drawing.Point(1323, 67);
+            this.BT_TestButton.Location = new System.Drawing.Point(579, 534);
             this.BT_TestButton.Name = "BT_TestButton";
             this.BT_TestButton.Size = new System.Drawing.Size(90, 50);
             this.BT_TestButton.TabIndex = 19;
@@ -216,7 +216,7 @@
             // 
             // BT_Testevent
             // 
-            this.BT_Testevent.Location = new System.Drawing.Point(1323, 137);
+            this.BT_Testevent.Location = new System.Drawing.Point(579, 604);
             this.BT_Testevent.Name = "BT_Testevent";
             this.BT_Testevent.Size = new System.Drawing.Size(90, 50);
             this.BT_Testevent.TabIndex = 20;

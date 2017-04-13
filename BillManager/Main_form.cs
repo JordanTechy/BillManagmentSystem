@@ -8,12 +8,6 @@ using System.Threading;
 using System.Windows.Forms;
 namespace BillManager
 {
-
-
-
-    /*
-     I seriousley dont fucking know
-    */
     public partial class Main_form : Form
     {
         #region Global Variables
@@ -50,7 +44,17 @@ namespace BillManager
 
         private void BT_AddBill_Click(object sender, EventArgs e)  // adding bill button
         {
-            addbill();
+            // check if the bill already exists 
+            bool billAlreadyExists = billFunctions.checkIfBillExists(billslist, TB_BillsName.Text);
+
+            if (billAlreadyExists)
+            {
+                textBox1.Text = "bill already exists please rename bill";
+            }else
+	        {
+                addbill();
+            }
+            
         }
       
         private void BT_totalweekcost_Click(object sender, EventArgs e)
@@ -95,7 +99,7 @@ namespace BillManager
                     }
                     else
                     {
-                        MessageBox.Show("Please Enter  number for cost");
+                        MessageBox.Show("Please Enter number for cost");
                     }
                 }
 
@@ -153,7 +157,10 @@ namespace BillManager
         #endregion
 
         #region File handling methods
-       
+       /// <summary>
+       /// inhdsaofjnhdsa
+       /// 
+       /// </summary>
         private void loadfile()
         {
             billslist = billFunctions.ReadFromFile();
@@ -204,9 +211,11 @@ namespace BillManager
         //-------------------------------------linq----------------------------------------------------------
         private void BT_TestButton_Click(object sender, EventArgs e)
         {
-            LinqTry MyLinq = new LinqTry();
 
-            var result = MyLinq.getlinq(billslist);
+
+            var result = from p in billslist
+                             orderby p.PersonsName
+                             group p by p.PersonsName;
 
             foreach (var item in result)
             {

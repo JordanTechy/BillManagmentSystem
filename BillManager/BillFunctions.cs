@@ -160,6 +160,23 @@ namespace BillManager
         }
         #endregion
 
+        #region check if the bill name exists
+        public bool checkIfBillExists(List<Bill> billtocheck, string billnametocheckfor)
+            {
+                foreach (var _Bill in billtocheck)
+                {
+                    if (_Bill.BillName.ToLower() == billnametocheckfor.ToLower())
+                    {
+                        return true;
+                    }
+                  
+                }
+            return false;// return false if there isiant any bills
+            }
+
+        #endregion
+        // check if string name
+    
         //----------------------------------------
     }
 
