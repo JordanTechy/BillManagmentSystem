@@ -180,6 +180,13 @@ namespace BillManager
             }
 
         #endregion
+
+        #region Delete bill using bill name
+        public List<Bill> DeleteBillByName(List<Bill> billslist)
+        {
+            return null;
+        }
+        #endregion
     }
 }
 

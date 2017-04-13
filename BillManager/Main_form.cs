@@ -30,6 +30,8 @@ namespace BillManager
 
         private void Main_form_Load(object sender, EventArgs e)
         {
+            setUpcalender();
+
             dataGridView1.DataSource = mytable;
 
             myTable_init();
@@ -56,18 +58,17 @@ namespace BillManager
         {
             printBillsList(billslist);
         }
-
-     
-
        
         // DELETING ROW
 
         private void BT_Delete_Click(object sender, EventArgs e)
         {
            
-        }
 
+
+        }
         #endregion
+
         #region Tool strip event handlers
         private void readFromFileToolStripMenuItem_Click(object sender, EventArgs e)
             {
@@ -218,9 +219,13 @@ namespace BillManager
         }
         #endregion
 
-        #region AddBillIfDoesentExist
+        void setUpcalender()
+        {
+            dateTimePicker.Format = DateTimePickerFormat.Custom;
+            dateTimePicker.CustomFormat = "dd - MMM - yy";
+            //dateTimePicker.ShowUpDown = true;
+        }
 
-        #endregion
 
         #region Testing region
         //-------------------------------------linq----------------------------------------------------------
