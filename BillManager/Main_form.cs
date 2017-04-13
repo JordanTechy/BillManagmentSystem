@@ -30,6 +30,8 @@ namespace BillManager
 
         private void Main_form_Load(object sender, EventArgs e)
         {
+            setUpcalender();
+
             dataGridView1.DataSource = mytable;
 
             myTable_init();
@@ -44,17 +46,7 @@ namespace BillManager
 
         private void BT_AddBill_Click(object sender, EventArgs e)  // adding bill button
         {
-            // check if the bill already exists 
-            bool billAlreadyExists = billFunctions.checkIfBillExists(billslist, TB_BillsName.Text);
-
-            if (billAlreadyExists)
-            {
-                textBox1.Text = "bill already exists please rename bill";
-            }else
-	        {
-                addbill();
-            }
-            
+            addbill();
         }
       
         private void BT_totalweekcost_Click(object sender, EventArgs e)
@@ -66,42 +58,62 @@ namespace BillManager
         {
             printBillsList(billslist);
         }
-
-        private void TB_SaveToFile_Click(object sender, EventArgs e)
-        {
-            saveToFile();
-        }
-
-        private void BT_ReadFile_Click(object sender, EventArgs e)
-        {
-           compareFile();
-        }
+       
         // DELETING ROW
 
         private void BT_Delete_Click(object sender, EventArgs e)
         {
            
+
+
         }
+        #endregion
+
+        #region Tool strip event handlers
+        private void readFromFileToolStripMenuItem_Click(object sender, EventArgs e)
+            {
+            compareFile();
+            }
+        private void saveFromFileToolStripMenuItem_Click(object sender, EventArgs e)
+            {
+            saveToFile();
+            }
+
+            private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+            {
+            this.Close();
+            }
 
         #endregion
 
         #region Billl adding method
-           public void addbill()
+        public void addbill()
                 {
-                    double cost = 0;
+                    // check if the bill already exists 
+                    bool billAlreadyExists = billFunctions.checkIfBillExists(billslist, TB_BillsName.Text);
 
-                    if (Double.TryParse(TB_BillCost.Text, out cost) == true)
+                    if (billAlreadyExists)
                     {
-                        billslist.Add(new Bill(TB_BillsName.Text, TB_PersonName.Text, Convert.ToDouble(TB_BillCost.Text), dateTimePicker.Value.Date));
-
-                        updateGrid(billslist);
-                        //  mytable.Rows.Add(lastaddedbill.BillName, lastaddedbill.PersonsName, lastaddedbill.WeeklyCost, lastaddedbill.PaymentDate);
+                        textBox1.Text = "bill already exists please rename bill";
                     }
                     else
                     {
-                        MessageBox.Show("Please Enter number for cost");
-                    }
+                        
+                    
+                        double cost = 0;
+
+                        if (Double.TryParse(TB_BillCost.Text, out cost) == true)
+                        {
+                            billslist.Add(new Bill(TB_BillsName.Text, TB_PersonName.Text, Convert.ToDouble(TB_BillCost.Text), dateTimePicker.Value.Date));
+
+                            updateGrid(billslist);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Please Enter number for cost");
+                        }
                 }
+        }
 
         #endregion
       
@@ -207,6 +219,14 @@ namespace BillManager
         }
         #endregion
 
+        void setUpcalender()
+        {
+            dateTimePicker.Format = DateTimePickerFormat.Custom;
+            dateTimePicker.CustomFormat = "dd - MMM - yy";
+            //dateTimePicker.ShowUpDown = true;
+        }
+
+
         #region Testing region
         //-------------------------------------linq----------------------------------------------------------
         private void BT_TestButton_Click(object sender, EventArgs e)
@@ -243,9 +263,12 @@ namespace BillManager
 
             op(2);
         }
-    
+
+
         //-----------------------------------------------------------------------
-#endregion
+        #endregion
+
+       
     }
 }
 
