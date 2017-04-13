@@ -7,20 +7,26 @@ using System.Threading;
 
 namespace BillManager
 {
-    //trying something elseeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
-
-
+   
     public class BillFunctions
     {
-        
-        double total { get; set; }
+        #region Global variables
 
+        double total { get; set; }
         private string filePath = @"C:\CodeRepository\BillManagmentSystem\test.csv";
 
+        #endregion
+
+        #region constructor
         public BillFunctions()
-        {
+                {
             
-        }
+                }
+        #endregion
+
+        #region calculate the total weekly cost
+
+       
 
         public double totalWeekleyCost(List<Bill> Bill_list)
         {
@@ -31,6 +37,10 @@ namespace BillManager
             }
             return total;
         }
+        #endregion
+
+        #region save the data to a file
+
         
         public bool SaveTheData(List<Bill> Bill_list)
         {
@@ -58,7 +68,10 @@ namespace BillManager
             }
 
         }
-                 
+        #endregion
+
+        #region Read the data from a file
+        
         public List<Bill> ReadFromFile()
         {
             string FileAdress = (filePath);
@@ -117,6 +130,9 @@ namespace BillManager
             
             return BillsFromFileList;
         }
+        #endregion
+
+        #region Comparing lists of bills
 
         public bool CompareListOfBills(List<Bill> UsersBills, List<Bill> FilesBills)
         {
@@ -142,9 +158,26 @@ namespace BillManager
             }
             return billsEQfile;
         }
+        #endregion
 
+        #region check if the bill name exists
+        public bool checkIfBillExists(List<Bill> billtocheck, string billnametocheckfor)
+            {
+                foreach (var _Bill in billtocheck)
+                {
+                    if (_Bill.BillName.ToLower() == billnametocheckfor.ToLower())
+                    {
+                        return true;
+                    }
+                  
+                }
+            return false;// return false if there isiant any bills
+            }
 
-//----------------------------------------
+        #endregion
+        // check if string name
+    
+        //----------------------------------------
     }
 
 }

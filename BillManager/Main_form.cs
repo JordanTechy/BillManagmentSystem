@@ -8,22 +8,20 @@ using System.Threading;
 using System.Windows.Forms;
 namespace BillManager
 {
-
-
-
-    /*
-     
-    */
     public partial class Main_form : Form
     {
+        #region Global Variables
 
-        static DataTable mytable = new DataTable();
+        static DataTable mytable = new DataTable(); // mytable 
 
-        List<Bill> billslist = new List<Bill>();
+        List<Bill> billslist = new List<Bill>(); // main bills list
 
-        BillFunctions billFunctions = new BillFunctions(); // creat a object to use for maths functions
+        BillFunctions billFunctions = new BillFunctions(); // create a object to use all the bill functions
 
-       
+        #endregion
+
+        #region Main entry point for the aplication
+
         public Main_form()
         {
             InitializeComponent();
@@ -40,10 +38,23 @@ namespace BillManager
 
            //addSampleDate();
         }
+        #endregion
+
+        #region Button event handlers
 
         private void BT_AddBill_Click(object sender, EventArgs e)  // adding bill button
         {
-            addbill();
+            // check if the bill already exists 
+            bool billAlreadyExists = billFunctions.checkIfBillExists(billslist, TB_BillsName.Text);
+
+            if (billAlreadyExists)
+            {
+                textBox1.Text = "bill already exists please rename bill";
+            }else
+	        {
+                addbill();
+            }
+            
         }
       
         private void BT_totalweekcost_Click(object sender, EventArgs e)
@@ -69,39 +80,47 @@ namespace BillManager
 
         private void BT_Delete_Click(object sender, EventArgs e)
         {
-            deleteRow(TB_deletebill.Text);
+           
         }
 
+        #endregion
 
-        //----------------------------------Methods-----------------------------------
-        public void addbill()
-        {
-            double cost = 0;
+        #region Billl adding method
+           public void addbill()
+                {
+                    double cost = 0;
 
-            if (Double.TryParse(TB_BillCost.Text, out cost) == true)
-            {
-                billslist.Add(new Bill(TB_BillsName.Text, TB_PersonName.Text, Convert.ToDouble(TB_BillCost.Text), dateTimePicker.Value.Date));
+                    if (Double.TryParse(TB_BillCost.Text, out cost) == true)
+                    {
+                        billslist.Add(new Bill(TB_BillsName.Text, TB_PersonName.Text, Convert.ToDouble(TB_BillCost.Text), dateTimePicker.Value.Date));
 
-                updateGrid(billslist);
-                //  mytable.Rows.Add(lastaddedbill.BillName, lastaddedbill.PersonsName, lastaddedbill.WeeklyCost, lastaddedbill.PaymentDate);
-            }
-            else
-            {
-                MessageBox.Show("Please Enter  number for cost");
-            }
-        }
+                        updateGrid(billslist);
+                        //  mytable.Rows.Add(lastaddedbill.BillName, lastaddedbill.PersonsName, lastaddedbill.WeeklyCost, lastaddedbill.PaymentDate);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please Enter number for cost");
+                    }
+                }
 
-        public void updateGrid(List<Bill> _billlist)
-        {
-            mytable.Clear();
+        #endregion
+      
+        #region Update data grid method
+         public void updateGrid(List<Bill> _billlist)
+                {
+                    mytable.Clear();
 
-            foreach (var bill in _billlist)
-            {
-                mytable.Rows.Add(bill.BillName, bill.PersonsName, bill.WeeklyCost, bill.PaymentDate);
-            }
+                    foreach (var bill in _billlist)
+                    {
+                        mytable.Rows.Add(bill.BillName, bill.PersonsName, bill.WeeklyCost, bill.PaymentDate);
+                    }
 
-        }
+                }
+        #endregion
 
+        #region Print the bills list methos
+
+        
         void printBillsList(List<Bill> _billslist)
         {
             foreach (Bill item in _billslist)
@@ -109,7 +128,10 @@ namespace BillManager
                 textBox1.AppendText(item.BillName + "  " + item.PersonsName + "  " + item.WeeklyCost + " " + item.PaymentDate.ToString() + Environment.NewLine);
             }
         }
-        
+        #endregion
+
+        #region initalisation of the data grid view table methods
+       
         private void myTable_init()
         {
             mytable.Columns.Add("Bill name", typeof(string));
@@ -117,14 +139,11 @@ namespace BillManager
             mytable.Columns.Add("bill cost", typeof(int));
             mytable.Columns.Add("date ", typeof(DateTime));
 
-            addSampleDate();
-
-           
+           // addSampleDate();
         }
 
         void addSampleDate()
         {
-
             billslist.Add(new Bill("car", "jacqui", 10, DateTime.Now.AddDays(3)));
             billslist.Add(new Bill("food", "jordan", 20, DateTime.Now));
             billslist.Add(new Bill("rent", "jacqui", 56, DateTime.Now.AddDays(3)));
@@ -134,15 +153,14 @@ namespace BillManager
             billslist.Add(new Bill("internet", "jacqui", 34, DateTime.Now.AddDays(3)));
 
             updateGrid(billslist);
-            
         }
+        #endregion
 
-//// NEXT MISHION TO MAKE THIS DELETE THE BILLS LIST UPDATE TABLE
-        public void deleteRow(string BillToDelete) 
-        {
-          
-        }
-
+        #region File handling methods
+       /// <summary>
+       /// inhdsaofjnhdsa
+       /// 
+       /// </summary>
         private void loadfile()
         {
             billslist = billFunctions.ReadFromFile();
@@ -187,19 +205,17 @@ namespace BillManager
                 textBox1.Text = "Billslist doesent equsl list of bill \n in file would you like to save";
             }
         }
+        #endregion
 
-
-
-
-
-
-
-//-------------------------------------linq----------------------------------------------------------
+        #region Testing region
+        //-------------------------------------linq----------------------------------------------------------
         private void BT_TestButton_Click(object sender, EventArgs e)
         {
-            LinqTry MyLinq = new LinqTry();
 
-            var result = MyLinq.getlinq(billslist);
+
+            var result = from p in billslist
+                             orderby p.PersonsName
+                             group p by p.PersonsName;
 
             foreach (var item in result)
             {
@@ -229,7 +245,7 @@ namespace BillManager
         }
     
         //-----------------------------------------------------------------------
-
+#endregion
     }
 }
 
