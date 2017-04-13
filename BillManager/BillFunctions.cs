@@ -7,7 +7,6 @@ using System.Threading;
 
 namespace BillManager
 {
-   
     public class BillFunctions
     {
         #region Global variables
@@ -25,8 +24,6 @@ namespace BillManager
         #endregion
 
         #region calculate the total weekly cost
-
-       
 
         public double totalWeekleyCost(List<Bill> Bill_list)
         {
@@ -162,33 +159,32 @@ namespace BillManager
 
         #region check if the bill name exists
         public bool checkIfBillExists(List<Bill> billtocheck, string billnametocheckfor)
+        {
+            if (billnametocheckfor != null && billnametocheckfor != "")
             {
                 foreach (var _Bill in billtocheck)
-                {
-                    if (_Bill.BillName.ToLower() == billnametocheckfor.ToLower())
                     {
-                        return true;
-                    }
+                        if (_Bill.BillName.ToLower() == billnametocheckfor.ToLower())
+                        {
+                            return true;
+                        }
                   
-                }
+                    }
+            }
+            else
+            {
+                return true;
+            }
+               
             return false;// return false if there isiant any bills
             }
 
         #endregion
-        // check if string name
-    
-        //----------------------------------------
     }
-
 }
-
-
-
 
 // asdfasdfasdfasdfsadfasfList<Bill> Bill_list
 //-----------------------------------------------------------------------------------------------------------------------------------------
-
-
 
 /* 
  * 
