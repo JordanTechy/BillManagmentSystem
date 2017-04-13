@@ -8,8 +8,8 @@ namespace BillManager
 {
     //sadfasdf23212121212
     public class Bill
-        
     {
+        #region Propertys
         public string PersonsName { get; set; }
 
         public string BillName { get; set; }
@@ -17,14 +17,18 @@ namespace BillManager
         public double WeeklyCost { get; set; }
 
         public DateTime PaymentDate { get; set; }
-      
-        public Bill(string _BillName,string _PersonName,double _cost,DateTime _PaymentDate)
-        {
+        #endregion
 
-            this.BillName = _BillName;
-            this.PersonsName = _PersonName;
-            this.WeeklyCost = _cost;
-            this.PaymentDate = _PaymentDate;
-        }
+        #region Constructor
+        public Bill(string _BillName,string _PersonName,double _cost,DateTime _PaymentDate)
+                {
+
+                    BillName = _BillName;
+                    PersonsName = _PersonName;
+                    WeeklyCost = _cost;
+                    PaymentDate = _PaymentDate;
+                }
+        #endregion
+        
     }
 }
