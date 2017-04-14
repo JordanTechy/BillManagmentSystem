@@ -72,10 +72,10 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(980, 360);
+            this.textBox1.Location = new System.Drawing.Point(707, 308);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(214, 289);
+            this.textBox1.Size = new System.Drawing.Size(297, 320);
             this.textBox1.TabIndex = 1;
             // 
             // BT_Delete
@@ -177,9 +177,9 @@
             // 
             // BT_printbillList
             // 
-            this.BT_printbillList.Location = new System.Drawing.Point(1024, 817);
+            this.BT_printbillList.Location = new System.Drawing.Point(686, 659);
             this.BT_printbillList.Name = "BT_printbillList";
-            this.BT_printbillList.Size = new System.Drawing.Size(90, 30);
+            this.BT_printbillList.Size = new System.Drawing.Size(74, 43);
             this.BT_printbillList.TabIndex = 15;
             this.BT_printbillList.Text = "print all bills";
             this.BT_printbillList.UseVisualStyleBackColor = true;
@@ -187,9 +187,9 @@
             // 
             // BT_totalweekcost
             // 
-            this.BT_totalweekcost.Location = new System.Drawing.Point(1033, 749);
+            this.BT_totalweekcost.Location = new System.Drawing.Point(766, 659);
             this.BT_totalweekcost.Name = "BT_totalweekcost";
-            this.BT_totalweekcost.Size = new System.Drawing.Size(90, 50);
+            this.BT_totalweekcost.Size = new System.Drawing.Size(76, 43);
             this.BT_totalweekcost.TabIndex = 16;
             this.BT_totalweekcost.Text = "total weekley cost";
             this.BT_totalweekcost.UseVisualStyleBackColor = true;
@@ -197,9 +197,9 @@
             // 
             // BT_TestButton
             // 
-            this.BT_TestButton.Location = new System.Drawing.Point(1238, 730);
+            this.BT_TestButton.Location = new System.Drawing.Point(848, 659);
             this.BT_TestButton.Name = "BT_TestButton";
-            this.BT_TestButton.Size = new System.Drawing.Size(90, 50);
+            this.BT_TestButton.Size = new System.Drawing.Size(78, 43);
             this.BT_TestButton.TabIndex = 19;
             this.BT_TestButton.Text = "TestButton";
             this.BT_TestButton.UseVisualStyleBackColor = true;
@@ -207,9 +207,9 @@
             // 
             // BT_Testevent
             // 
-            this.BT_Testevent.Location = new System.Drawing.Point(1238, 800);
+            this.BT_Testevent.Location = new System.Drawing.Point(932, 659);
             this.BT_Testevent.Name = "BT_Testevent";
-            this.BT_Testevent.Size = new System.Drawing.Size(90, 50);
+            this.BT_Testevent.Size = new System.Drawing.Size(91, 43);
             this.BT_Testevent.TabIndex = 20;
             this.BT_Testevent.Text = "Testevent";
             this.BT_Testevent.UseVisualStyleBackColor = true;
@@ -217,11 +217,12 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.Color.Silver;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1665, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1035, 24);
             this.menuStrip1.TabIndex = 21;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -239,26 +240,26 @@
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(145, 6);
             // 
             // readFromFileToolStripMenuItem
             // 
             this.readFromFileToolStripMenuItem.Name = "readFromFileToolStripMenuItem";
-            this.readFromFileToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.readFromFileToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.readFromFileToolStripMenuItem.Text = "Read from file";
             this.readFromFileToolStripMenuItem.Click += new System.EventHandler(this.readFromFileToolStripMenuItem_Click);
             // 
             // saveFromFileToolStripMenuItem
             // 
             this.saveFromFileToolStripMenuItem.Name = "saveFromFileToolStripMenuItem";
-            this.saveFromFileToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.saveFromFileToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.saveFromFileToolStripMenuItem.Text = "Save to file";
             this.saveFromFileToolStripMenuItem.Click += new System.EventHandler(this.saveFromFileToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -286,17 +287,18 @@
             this.panel2.Controls.Add(this.panel1);
             this.panel2.Controls.Add(this.BT_Delete);
             this.panel2.Controls.Add(this.TB_deletebill);
-            this.panel2.Location = new System.Drawing.Point(82, 27);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(0, 24);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(658, 717);
+            this.panel2.Size = new System.Drawing.Size(658, 695);
             this.panel2.TabIndex = 24;
             // 
             // Main_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Peru;
-            this.ClientSize = new System.Drawing.Size(1665, 865);
+            this.BackColor = System.Drawing.Color.Black;
+            this.ClientSize = new System.Drawing.Size(1035, 719);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.BT_Testevent);
             this.Controls.Add(this.BT_TestButton);
@@ -304,9 +306,11 @@
             this.Controls.Add(this.BT_printbillList);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.menuStrip1);
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Main_form";
-            this.Text = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Bill Managerr";
             this.Load += new System.EventHandler(this.Main_form_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
