@@ -64,10 +64,18 @@ namespace BillManager
         private void BT_Delete_Click(object sender, EventArgs e)
         {
            
+         // work oout how to do this the normail way
+            billslist.RemoveAll(x => x.BillName.ToLower() == TB_deletebill.Text.ToLower());
+         
+            
+            updateGrid(billslist);
 
 
         }
+        public delegate bool Predicate<in T>(T obj);
+
         #endregion
+
 
         #region Tool strip event handlers
         private void readFromFileToolStripMenuItem_Click(object sender, EventArgs e)
@@ -219,14 +227,17 @@ namespace BillManager
         }
         #endregion
 
-        void setUpcalender()
-        {
-            dateTimePicker.Format = DateTimePickerFormat.Custom;
-            dateTimePicker.CustomFormat = "dd - MMM - yy";
-            //dateTimePicker.ShowUpDown = true;
-        }
+        #region set up calender
+          void setUpcalender()
+                {
+                    dateTimePicker.Format = DateTimePickerFormat.Custom;
+                    dateTimePicker.CustomFormat = "dd - MMM - yy";
+                    //dateTimePicker.ShowUpDown = true;
+                }
 
 
+        #endregion
+      
         #region Testing region
         //-------------------------------------linq----------------------------------------------------------
         private void BT_TestButton_Click(object sender, EventArgs e)
