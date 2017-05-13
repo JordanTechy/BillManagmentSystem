@@ -6,18 +6,16 @@ using System.Threading.Tasks;
 
 namespace BillManager
 {
-    class Person
+    class Category
     {
-
-        List<Bill> Personsbillslist = new List<Bill>();
 
         public string _name { get; set; }
 
         public decimal income { get; set; }
 
-        Person(string name,decimal income, List<Bill> listOfBills)
+        Category(string name,decimal income)
         {
-
+          List<Bill> Personsbillslist = new List<Bill>();
         }
 
 
