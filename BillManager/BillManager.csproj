@@ -55,7 +55,7 @@
     <Compile Include="Main_form.Designer.cs">
       <DependentUpon>Main_form.cs</DependentUpon>
     </Compile>
-    <Compile Include="Category.cs" />
+    <Compile Include="Person.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Main_form.resx">
