@@ -6,17 +6,23 @@ using System.Threading.Tasks;
 
 namespace BillManager
 {
-    class Person
+    class category
     {
 
-        List<Bill> Personsbillslist = new List<Bill>();
-
+        public bool _isPerson { get; set; }
         public string _name { get; set; }
+        List<Bill> Categorybillslist = new List<Bill>();
 
-        public decimal income { get; set; }
 
-        Person(string name,decimal income, List<Bill> listOfBills)
+        public decimal _income { get; set; }
+
+        category(string name, bool isPerson = false, decimal income = 0)
         {
+
+            _name = name;
+            _isPerson = isPerson;  // use to check if catogory has income
+            _income = income;
+
 
         }
 
